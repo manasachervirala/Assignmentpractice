@@ -4,143 +4,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class BankAccount
+namespace FirstNprimenumbers
 {
-    public string name;
-    
-    public double balance = 0;
-   
-    public BankAccount(string namae, double firstDep)
+    class Program
     {
-        name = namae;
-        balance += firstDep;
-    }
+  
 
-    
-
-    public double getBal()
-    {
-        return balance;
-    }
-
-    public string getName()
-    {
-        return this.name;
-    }
-
-    public void deposit(double addAmt)
-    {
-        balance += addAmt;
-    }
-
-    public bool withdraw(double outAmt)
-    {
-        bool chk = true;
-        if (outAmt <= balance)
-        {
-            balance -= outAmt;
-        }
-        else if (outAmt > balance)
-        {
-            chk = false;
-        }
-        return chk;
-    }
-
-    
-}
-class Program
-{
-    static void Main(string[] args)
-    {
-        List<BankAccount> bank = new List<BankAccount>();
-        while (true)
-        {
-            Console.Write("1. Set up account\n2. Check balance\n3. Deposit\n4. Withdraw\n ");
-            string x = Console.ReadLine();
-            
-            if (x == "1")
+            // Function to print first N prime numbers  
+            static void print_first_N_primes(int N)
             {
-                Console.Write("Enter name: ");
-                string name = Console.ReadLine();
-                Console.Write("Enter initial balance: ");
-                double init = double.Parse(Console.ReadLine());
-                bank.Add(new BankAccount(name, init));
-                Console.WriteLine("Bank Account Added!");
-                Console.ReadLine();
-            }
-            else if (x == "2")
-            {
-                Console.Write("Enter name: ");
-                string nmChk = Console.ReadLine();
-                for (int ix = 0; ix < bank.Count; ix++)
+                // Declare the variables  
+                int i, j, flag;
+
+                // Print display message  
+                Console.Write("Prime numbers between 1 and " +
+                                               N + " are:\n");
+
+                // Traverse each number from 1 to N  
+                // with the help of for loop  
+                for (i = 1; i <= N; i++)
                 {
-                    if (bank[ix].name == nmChk)
+
+                    // Skip 0 and 1 as they are  
+                    // niether prime nor composite  
+                    if (i == 1 || i == 0)
+                        continue;
+
+                     
+                    flag = 1;
+
+                    for (j = 2; j <= i / 2; ++j)
                     {
-                        Console.WriteLine("Account Found!\nName: {0}\nBalance: {1}", bank[ix].name, bank[ix].balance);
-                    }
-                }
-                Console.ReadLine();
-            }
-            else if (x == "3")
-            {
-                Console.Write("Enter name: ");
-                string nmChk = Console.ReadLine(), nmNow = null;
-                int accNum = -1;
-                for (int ix = 0; ix < bank.Count; ix++)
-                {
-                    if (bank[ix].name == nmChk)
-                    {
-                        nmNow = nmChk;
-                        accNum = ix;
-                    }
-                }
-                if (accNum != -1)
-                {
-                    Console.Write("Amount to Deposit: ");
-                    bank[accNum].deposit(double.Parse(Console.ReadLine()));
-                    Console.WriteLine("Amount successfully deposited!");
-                }
-                else { Console.WriteLine("Account not found!"); }
-                Console.ReadLine();
-            }
-            else if (x == "4")
-            {
-                Console.Write("Enter name: ");
-                string nmChk = Console.ReadLine(), nmNow = null;
-                int accNum = -1;
-                for (int ix = 0; ix < bank.Count; ix++)
-                {
-                    if (bank[ix].name == nmChk)
-                    {
-                        nmNow = nmChk;
-                        accNum = ix;
-                    }
-                }
-                if (accNum != -1)
-                {
-                    Console.Write("Amount to Withdraw: ");
-                    bool ok = bank[accNum].withdraw(double.Parse(Console.ReadLine()));
-                    if (ok)
-                    {
-                        Console.WriteLine("Amount successfully withdrawn!");
-                        if (bank[accNum].balance == 0)
+                        if (i % j == 0)
                         {
-                            bank[accNum] = null;
-                            Console.WriteLine("Account closed!");
+                            flag = 0;
+                            break;
                         }
                     }
-                    else { Console.WriteLine("Insufficient funds!"); }
-                }
-                else { Console.WriteLine("Account not found!"); }
+                    
+                    if (flag == 1)
+                        Console.Write(i + " ");
                 Console.ReadLine();
+                }
             }
 
-            else { Console.WriteLine("Account not found!"); }
-            Console.ReadLine();
-        }
-            
          
-           
+            public static void Main(String[] args)
+            {
+                int N = 100;
+
+                print_first_N_primes(N);
+            }
+        }
     }
-}
+
