@@ -4,37 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace repeatedcharcters
-{
-  
 
-    public class repeatedcharacters
+namespace series1
+{
+    class series
     {
         
-        public static int count(string s, char c)
+
+  
+// Function to calculate the sum 
+ static int calculateSum(int n)
+    {
+
+            // Return total sum 
+            return (int)(n * (n + 1) / 2);
+        }  
+  
+
+    // Driver code 
+   
+    static void Main(string[] args)
         {
-            int res = 0;
 
-            for (int i = 0; i < s.Length; i++)
-            {
-
-               
-                if (s[i] == c)
-                    res++;
-            }
-
-            return res;
-        }
-
-      
-        public static void Main()
-        {
-            string str = "Hello world";
-            char c = 'l';
-
-            Console.WriteLine(count(str, c));
+            int n = 2;
+            Console.WriteLine(calculateSum(n));
             Console.ReadLine();
+
+            
+
         }
     }
- 
 }
