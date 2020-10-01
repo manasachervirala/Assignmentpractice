@@ -4,34 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace largestnumberinarray
+namespace pattern1
 {
-    class largestnumberinarray
+    class pattern1
     {
+        static void Main(string[] args)
+        {
+      
+                int i, j;
+                for (i = 5; i >= 1; i--)
+                {
+                    for (j = i; j >= 1; j--)
+                    {
+                        Console.Write(j);
+                    }
+                    Console.WriteLine();
+                }
+                Console.ReadLine();
 
-            static int[] arr = { 89, 3243, 4590, 90234, 93808 };
-
-            
-            static int largest()
-            {
-                int i;
-           int max = arr[0];
-
-              
-                for (i = 1; i < arr.Length; i++)
-                    if (arr[i] > max)
-                        max = arr[i];
-
-                return max;
-            }
-
-             
-            public static void Main()
-            {
-                Console.WriteLine("Largest in given " + largest());
-            Console.ReadLine();
             }
         }
-
     }
 
