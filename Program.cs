@@ -4,25 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pattern1
+namespace repeatedcharcters
 {
-    class pattern1
-    {
-        static void Main(string[] args)
-        {
-      
-                int i, j;
-                for (i = 5; i >= 1; i--)
-                {
-                    for (j = i; j >= 1; j--)
-                    {
-                        Console.Write(j);
-                    }
-                    Console.WriteLine();
-                }
-                Console.ReadLine();
+  
 
+    public class repeatedcharacters
+    {
+        
+        public static int count(string s, char c)
+        {
+            int res = 0;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+
+               
+                if (s[i] == c)
+                    res++;
             }
+
+            return res;
+        }
+
+      
+        public static void Main()
+        {
+            string str = "Hello world";
+            char c = 'l';
+
+            Console.WriteLine(count(str, c));
+            Console.ReadLine();
         }
     }
-
+ 
+}
