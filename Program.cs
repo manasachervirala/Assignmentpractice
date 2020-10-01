@@ -4,26 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace naturalnumbers
+namespace amstrong
 {
-    class naturalnumber
-    {
-        static void Main(string[] args)
+   
+  public class ArmstrongExample
         {
-         
-
-                int i;
-              
-                Console.WriteLine("The first 10 natural number are:");
-
-                for (i = 1; i <= 10; i++)
+            public static void Main(string[] args)
+            {
+                int n, r, sum = 0, temp;
+                Console.Write("Enter the Number= ");
+                n = int.Parse(Console.ReadLine());
+                temp = n;
+                while (n > 0)
                 {
-                    Console.Write("{0} ", i);
-                Console.ReadLine();
+                    r = n % 10;
+                    sum = sum + (r * r * r);
+                    n = n / 10;
                 }
-                
+                if (temp == sum)
+                    Console.Write("Armstrong Number.");
+                else
+                    Console.Write("Not Armstrong Number.");
+            Console.ReadLine();
             }
         }
     }
-    
 
