@@ -4,18 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1
+namespace _8
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Numbers from 2 to 200 are");
-            for(int i=2;i<=100;i++)
+            Console.WriteLine("even numbers are");
+            for(int i=0;i<10;i++)
             {
-                Console.WriteLine("num= " + i);
+                if(i%2 ==0)
+                {
+                    Console.WriteLine("num" + i);
+                }
             }
-            Console.ReadKey();
+            Console.ReadLine();
         }
     }
 }

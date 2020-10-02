@@ -4,17 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1
+namespace _6
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Numbers from 2 to 200 are");
-            for(int i=2;i<=100;i++)
+            int fact = 1, n;
+            Console.WriteLine("enter a number");
+            n = Convert.ToInt32(Console.ReadLine());
+            while(n>0)
             {
-                Console.WriteLine("num= " + i);
+                fact = fact * n;
+                n--;
             }
+            Console.WriteLine("fact=" + fact);
             Console.ReadKey();
         }
     }
