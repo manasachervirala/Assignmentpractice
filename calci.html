@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<title>Addtion, Substraction, Divide &amp; Multiplication using javaScript!</title>
+	<script>
+		function Calc(){
+			var val1 = document.getElementById("val1").value;
+			var val2 = document.getElementById("val2").value;
+			var opt = document.getElementById("opt").value;
+			
+			var ans = eval(val1 + opt + val2);
+			document.getElementById("ans").value = ans;
+		}
+	</script>
+	</head>
+	<body>
+		<div >
+			<div >
+				<h3>Addition, Subtraction using JavaScript!</h3>
+				<hr />
+				<div >
+					<label for="desc">number 1:</label> 
+				</div>
+				<div >
+					<input type="number" class="form-control" id="val1" value="5" required>
+				</div>
+			</div>
+			<br />
+			<div >
+				<div >
+					<label for="desc">number 2:</label> 
+				</div>
+				<div >
+					<input type="number"  id="val2" value="2" required>
+				</div>
+				<div >
+					<select id="opt" class="form-control">
+						<option>+</option>
+						<option>-</option>
+						<option>*</option>
+						<option>/</option>
+					</select>
+				</div>
+ 
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-lg-1">
+					<label for="desc">Answer:</label> 
+				</div>
+				<div class="col-lg-1">
+					<input type="text" class="form-control" id="ans" readonly>
+				</div>
+				<div class="col-lg-1">
+					<button type="submit" name="submit" class="btn btn-success" onClick="Calc()">Submit</button>
+				</div>
+ 
+			</div>
+		</div>
+	</body>
+</html>
