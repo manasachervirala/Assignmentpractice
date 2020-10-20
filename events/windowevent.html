@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> this is third webtab
+	</title>
+	</head>
+	<body>
+		<p>This is a demo abount the </p>
+		<p> TRy resizing the browser(ctrl + "+button")window y this resize event occurs></p>
+		<p id = "demo"> </p>
+
+
+		<p>math operations</p>
+		<p>Click the below button</p>
+
+
+		<button id ="mybtn">calclate</button>
+		<p id ="demo"></p>
+		<script type="text/javascript">
+			
+			var x=10;
+			var y=80;
+
+			document.getElementById("mybtn").addEventListener("click",function(){
+				calculator(x,y);
+				addition(x,y);
+				sub(x,y);
+			});
+			
+			function calculator(a,b){
+				var result =a*b;
+				document.getElementById("demo").innerHTML=result;
+			}
+			function addition(c,d)
+			{
+				var addition=c+d;
+				document.getElementById("demo").innerHTML=addition;
+			}
+			function sub(e,f)
+			{
+				var sub=e-f;
+				document.getElementById("demo").innerHTML=sub;
+			}
+		</script>
+		<script type="text/javascript">
+			window.addEventListener("click",function(){
+				document.getElementById("demo").innerHTML=HTMLTimeElement();
+			});
+		</script>
+	</body>
+	</html>
